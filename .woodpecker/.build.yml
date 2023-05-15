@@ -17,7 +17,7 @@ pipeline:
     settings:
       <<: *docker_creds
       repo: guisea/pg_dump
-      dockerfile: docker/Dockerfile
+      dockerfile: Dockerfile
       platforms: *platforms
       tag: "latest"
     when:
@@ -30,7 +30,7 @@ pipeline:
     settings:
       <<: *docker_creds
       repo: guisea/pg_dump
-      dockerfile: docker/Dockerfile
+      dockerfile: Dockerfile
       platforms: *platforms
       tags: ["latest", "${CI_COMMIT_TAG}"]
     when:
