@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 set -e
 
@@ -9,7 +9,10 @@ PGUSER=${PGUSER:-postgres}
 PGDB=${PGDB:-postgres}
 PGHOST=${PGHOST:-db}
 PGPORT=${PGPORT:-5432}
+PGROLES=${PGROLES:-false}
+TZ=${TZ:-"Pacific/Auckland"}
 
+export TZ="/usr/share/zoneinfo/${TZ}"
 
 if [[ "$COMMAND" == 'dump' ]]; then
     exec /dump.sh
