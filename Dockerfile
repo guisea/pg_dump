@@ -1,4 +1,4 @@
-FROM tuatahifibre/alpine:latest
+FROM alpine:latest
 LABEL "nz.co.tuatahifibre.vendor"="Tuatahi First Fibre" \
       version="1.0" \
       description="Postgres with ability to run pg_dump"
