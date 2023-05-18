@@ -1,4 +1,4 @@
-guisea/pg_dump
+guisea/pg_dump [![status-badge](https://wpci.guise.net.nz/api/badges/guisea/pg_dump/status.svg)](https://wpci.guise.net.nz/guisea/pg_dump)
 ================
 
 Docker image with pg_dump running as a cron task. Find the image, here: https://hub.docker.com/r/guisea/pg_dump/
