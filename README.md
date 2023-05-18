@@ -1,4 +1,4 @@
-annixa/pg_dump
+guisea/pg_dump
 ================
 
 Docker image with pg_dump running as a cron task. Find the image, here: https://hub.docker.com/r/annixa/docker-pg_dump/
@@ -15,13 +15,14 @@ Attach a target postgres container to this container and mount a volume to conta
 | `PGDB` | Optional | postgres | The name of the database |
 | `PGHOST` | Optional | db | The hostname of the database |
 | `PGPORT` | Optional | `5432` | The port for the database |
+| `PGROLES` | Optional | `FALSE` | Whether we should also dump roles (user/passwords) TRUE/FALSE 
 | `CRON_SCHEDULE` | Required | 0 1 * * * | The cron schedule at which to run the pg_dump |
 | `DELETE_OLDER_THAN` | Optional | `None` | Optionally, delete files older than `DELETE_OLDER_THAN` minutes. Do not include `+` or `-`. |
 
 Example:
 ```
 postgres-backup:
-  image: annixa/docker-pg_dump
+  image: guisea/pg_dump
   container_name: postgres-backup
   links:
     - postgres:db #Maps postgres as "db"
@@ -43,4 +44,4 @@ Run backup once without cron job, use "mybackup" as backup file prefix, shell wi
         -v /path/to/target/folder:/dump \   # where to put db dumps
         -e PREFIX=mybackup \
         --link my-postgres-container:db \   # linked container with running mongo
-        annixa/docker-pg_dump dump
+        guisea/pg_dump dump
